@@ -1,7 +1,7 @@
 
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
-import Languages from 'types/Languages';
+import { Languages } from 'types/common';
 import en from './en.json';
 
 i18n.use(initReactI18next).init({

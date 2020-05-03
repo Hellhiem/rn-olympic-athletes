@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeType from 'types/ThemeType';
+import { ThemeType } from 'types/common';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components/native';
 import { OBSLogo } from 'assets/images';

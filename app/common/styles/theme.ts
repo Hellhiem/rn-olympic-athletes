@@ -1,4 +1,4 @@
-import ThemeType from 'types/ThemeType';
+import { ThemeType } from 'types/common';
 
 const theme: ThemeType = {
   headerFontSize: '24px',
