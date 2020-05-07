@@ -5,7 +5,7 @@ import { baseUrl } from 'services/constants';
 
 type PropsType = {
   photoId: number;
-  name: string;
+  name?: string;
 };
 
 const ImageContainer = styled.View``;
@@ -39,7 +39,7 @@ const AthleteAvatar = ({ photoId, name }: PropsType) => {
       <AthleteImage
         source={{ uri: photoUri }}
       />
-      <AthleteName>{name}</AthleteName>
+      {name && <AthleteName>{name}</AthleteName>}
     </ImageContainer>
   );
 };

@@ -4,5 +4,11 @@
   },
   "Games": {
     "NotAvalibleOrUpcomming": "This event is currently not available"
+  },
+  "Athlete": {
+    "Name": "Name",
+    "DOB": "DOB",
+    "Weight": "Weight",
+    "Height": "Height"
   }
 }
