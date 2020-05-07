@@ -7,9 +7,10 @@ import { Athlete } from 'types/athletes';
 
 type PropsType = {
   gameId: number,
+  navigateToAthleteScreen: (athleteId: number) => void;
 };
 
-const AthletesGamesListContainer = ({ gameId }: PropsType) => {
+const AthletesGamesListContainer = ({ gameId, navigateToAthleteScreen }: PropsType) => {
   const dispatch = useDispatch();
 
   const gameAthletes: Athlete[] = useSelector(({ games }: AppState): Athlete[] => {
@@ -21,7 +22,10 @@ const AthletesGamesListContainer = ({ gameId }: PropsType) => {
   }, [gameId]);
 
   return (
-    <AthletesGamesListComponents gameAthletes={gameAthletes} />
+    <AthletesGamesListComponents
+      gameAthletes={gameAthletes}
+      navigateToAthleteScreen={navigateToAthleteScreen}
+    />
   );
 };
 

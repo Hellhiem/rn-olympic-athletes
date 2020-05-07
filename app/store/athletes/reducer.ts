@@ -3,8 +3,8 @@ import { AthleteReducerConstants, AthleteStateType, AthletesActionsType } from '
 const initialState: AthleteStateType = {
   isFetchingAthlete: false,
   isFetchingAthleteResult: false,
-  athlete: {},
-  athleteResult: [],
+  athleteData: {},
+  athleteResults: [],
 };
 
 function athlete(state: AthleteStateType = initialState, action: AthletesActionsType) {
@@ -18,7 +18,7 @@ function athlete(state: AthleteStateType = initialState, action: AthletesActions
       return {
         ...state,
         isFetchingAthlete: false,
-        athlete: action.response.data,
+        athleteData: action.response.data,
       };
     case AthleteReducerConstants.ATHLETE_FETCH_FAIL:
       return {
@@ -35,7 +35,7 @@ function athlete(state: AthleteStateType = initialState, action: AthletesActions
       return {
         ...state,
         isFetchingAthleteResult: false,
-        athleteResult: action.response.data,
+        athleteResults: action.response.data,
       };
     case AthleteReducerConstants.ATHLETE_RESULTS_FETCH_FAIL:
       return {

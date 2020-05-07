@@ -17,19 +17,20 @@ const GamesList = styled(FlatList as new () => FlatList<any>)``;
 
 type PropsType = {
   games: GameType[],
+  navigateToAthleteScreen: (athleteId: number) => void;
 };
 
 type FlatListDataType = {
   item: GameType,
 };
 
-const GamesComponent = ({ games }: PropsType) => {
+const GamesComponent = ({ games, navigateToAthleteScreen }: PropsType) => {
 
   const renderItem = (data: FlatListDataType) => {
     return (
       <Container>
         <GameName>{`${data.item.city} ${data.item.year}`}</GameName>
-        <AthletesGamesList gameId={data.item.game_id} />
+        <AthletesGamesList gameId={data.item.game_id} navigateToAthleteScreen={navigateToAthleteScreen} />
       </Container>
     );
   };

@@ -8,6 +8,8 @@ import { Athlete } from 'types/athletes';
 
 const AthletesGamesList = styled(FlatList as new () => FlatList<any>)``;
 
+const AthleteTouchable = styled.TouchableOpacity``;
+
 const EmptyListContainer = styled.View``;
 
 const EventNotAvalibleText = styled.Text`
@@ -19,13 +21,14 @@ const EventNotAvalibleText = styled.Text`
 
 type PropsType = {
   gameAthletes: Athlete[];
+  navigateToAthleteScreen: (athleteId: number) => void;
 };
 
 type FlatListDataType = {
   item: Athlete,
 };
 
-const AthletesGamesListComponent = ({ gameAthletes }: PropsType) => {
+const AthletesGamesListComponent = ({ gameAthletes, navigateToAthleteScreen }: PropsType) => {
   const { t } = useTranslation();
   const [scrollableList, setScrollableList] = useState(true);
 
@@ -33,11 +36,16 @@ const AthletesGamesListComponent = ({ gameAthletes }: PropsType) => {
     setScrollableList(true);
 
     return (
-      <AthleteHorizontalListItem
-        name={data.item.name}
-        surname={data.item.surname}
-        photoId={data.item.photo_id}
-      />
+      <AthleteTouchable
+        activeOpacity={0.5}
+        onPress={() => navigateToAthleteScreen(Number(data.item.athlete_id))}
+      >
+        <AthleteHorizontalListItem
+          name={data.item.name}
+          surname={data.item.surname}
+          photoId={data.item.photo_id}
+        />
+      </AthleteTouchable>
     );
   };
 
