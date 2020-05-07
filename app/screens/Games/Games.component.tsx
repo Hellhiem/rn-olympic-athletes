@@ -3,11 +3,13 @@ import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { GameType } from 'types/games';
 import { ThemeType } from 'types/common';
+import AthletesGamesList from './AthletesGamesList/AthletesGamesList.container';
 
 const Container = styled.View``;
 
 const GameName = styled.Text`
- font-size: ${({ theme }: { theme: ThemeType; }) => theme.headerFontSize};
+  font-size: ${({ theme }: { theme: ThemeType; }) => theme.headerFontSize};
+  margin-left: 16px;
 `;
 
 const GamesList = styled(FlatList as new () => FlatList<any>)``;
@@ -21,10 +23,12 @@ type FlatListDataType = {
 };
 
 const GamesComponent = ({ games }: PropsType) => {
+
   const renderItem = (data: FlatListDataType) => {
     return (
       <Container>
         <GameName>{`${data.item.city} ${data.item.year}`}</GameName>
+        <AthletesGamesList gameId={data.item.game_id} />
       </Container>
     );
   };

@@ -12,7 +12,7 @@ const GamesContainer = () => {
     dispatch(fetchGamesAction());
   });
 
-  const games: GameType[] = useSelector(({ games }: AppState) => games.data);
+  const games: GameType[] = useSelector(({ games }: AppState) => games.gamesData);
 
   return (
     <GamesScreen games={games} />

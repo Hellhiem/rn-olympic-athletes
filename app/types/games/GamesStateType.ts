@@ -2,7 +2,9 @@ import GameType from './GameType';
 
 type GamesStateType = {
   isFetchingGames: boolean;
-  data: GameType[];
+  isFetchingGameAthletes: boolean;
+  gamesData: GameType[];
+  athletesData: any;
   error?: string;
 };
 

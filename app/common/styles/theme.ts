@@ -5,6 +5,7 @@ const theme: ThemeType = {
   paragraphFontSize: '16px',
   colors: {
     black: 'black',
+    darkRed: '#941208',
   },
 };
 

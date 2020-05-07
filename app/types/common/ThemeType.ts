@@ -3,6 +3,7 @@ type ThemeType = {
   paragraphFontSize: string;
   colors: {
     black: string;
+    darkRed: string;
   };
 };
 

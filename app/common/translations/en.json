@@ -1,5 +1,8 @@
 {
   "Header": {
     "OlympicAthletes": "Olympic Athletes"
+  },
+  "Games": {
+    "NotAvalibleOrUpcomming": "This event is currently not available"
   }
 }

@@ -12,4 +12,18 @@ const fetchGames = () => {
     });
 };
 
-export { fetchGames };
+const fetchGamesAthletes = (gameId: number) => {
+  return axios
+    .get(`${baseUrl}/games/${gameId}/athletes`, {})
+    .then(response => {
+      return {
+        response,
+        gameId,
+      };
+    })
+    .catch(error => {
+      return error;
+    });
+};
+
+export { fetchGames, fetchGamesAthletes };

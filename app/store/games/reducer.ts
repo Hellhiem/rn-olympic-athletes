@@ -1,9 +1,11 @@
-
+import orderBy from 'lodash/orderBy';
 import { GamesStateType, GamesActionsType, GamesReducerConstants } from 'types/games';
 
 const initialState: GamesStateType = {
   isFetchingGames: false,
-  data: [],
+  isFetchingGameAthletes: false,
+  athletesData: {},
+  gamesData: [],
 };
 
 function games(state: GamesStateType = initialState, action: GamesActionsType) {
@@ -17,12 +19,32 @@ function games(state: GamesStateType = initialState, action: GamesActionsType) {
       return {
         ...state,
         isFetchingGames: false,
-        data: action.response.data,
+        gamesData: orderBy(action.response.data, 'year', 'desc'),
       };
     case GamesReducerConstants.GAMES_FETCH_FAIL:
       return {
         ...state,
         isFetchingGames: false,
+        error: action.error,
+      };
+    case GamesReducerConstants.GAMES_ATHLETES_FETCH_REQUEST:
+      return {
+        ...state,
+        isFetchingGameAthletes: true,
+      };
+    case GamesReducerConstants.GAMES_ATHLETES_FETCH_SUCCESS:
+      return {
+        ...state,
+        isFetchingGameAthletes: false,
+        athletesData: {
+          ...state.athletesData,
+          [action.response.gameId]: action.response.response.data,
+        },
+      };
+    case GamesReducerConstants.GAMES_ATHLETES_FETCH_FAIL:
+      return {
+        ...state,
+        isFetchingGameAthletes: false,
         error: action.error,
       };
     default:
