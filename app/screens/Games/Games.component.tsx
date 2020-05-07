@@ -1,11 +1,44 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { FlatList } from 'react-native';
+import styled from 'styled-components/native';
+import { GameType } from 'types/games';
+import { ThemeType } from 'types/common';
 
-const GamesComponent = () => {
+const Container = styled.View``;
+
+const GameName = styled.Text`
+ font-size: ${({ theme }: { theme: ThemeType; }) => theme.headerFontSize};
+`;
+
+const GamesList = styled(FlatList as new () => FlatList<any>)``;
+
+type PropsType = {
+  games: GameType[],
+};
+
+type FlatListDataType = {
+  item: GameType,
+};
+
+const GamesComponent = ({ games }: PropsType) => {
+  const renderItem = (data: FlatListDataType) => {
+    return (
+      <Container>
+        <GameName>{`${data.item.city} ${data.item.year}`}</GameName>
+      </Container>
+    );
+  };
+
+  const uniqueKey = (item: GameType): string => item.game_id.toString();
+
   return (
-    <View>
-      <Text>HelloGames</Text>
-    </View>
+    <Container>
+      <GamesList
+        renderItem={renderItem}
+        data={games}
+        keyExtractor={uniqueKey}
+      />
+    </Container>
   );
 };
 

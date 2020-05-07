@@ -28,6 +28,7 @@
       }
     ],
     "no-empty": false,
+    "no-shadowed-variable": false,
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
     "no-constant-condition": false,
