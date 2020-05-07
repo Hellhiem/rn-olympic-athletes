@@ -30,6 +30,8 @@ const AthletesGamesListComponent = ({ gameAthletes }: PropsType) => {
   const [scrollableList, setScrollableList] = useState(true);
 
   const renderItem = (data: FlatListDataType) => {
+    setScrollableList(true);
+
     return (
       <AthleteHorizontalListItem
         name={data.item.name}

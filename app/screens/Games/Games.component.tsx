@@ -9,6 +9,7 @@ const Container = styled.View``;
 
 const GameName = styled.Text`
   font-size: ${({ theme }: { theme: ThemeType; }) => theme.headerFontSize};
+  font-weight: bold;
   margin-left: 16px;
 `;
 
