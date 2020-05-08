@@ -4,6 +4,8 @@ type ThemeType = {
   colors: {
     black: string;
     darkRed: string;
+    white: string;
+    blue: string;
   };
 };
 

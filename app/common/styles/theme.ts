@@ -6,6 +6,8 @@ const theme: ThemeType = {
   colors: {
     black: 'black',
     darkRed: '#941208',
+    white: 'white',
+    blue: '#00BCD4',
   },
 };
 

@@ -9,6 +9,10 @@
     "Name": "Name",
     "DOB": "DOB",
     "Weight": "Weight",
-    "Height": "Height"
+    "Height": "Height",
+    "Medals": "Medals",
+    "Bio": "Bio",
+    "ReadMore": "Read more",
+    "ShowLess": "Show less"
   }
 }

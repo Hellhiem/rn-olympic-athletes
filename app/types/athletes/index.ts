@@ -11,6 +11,7 @@ import {
   AthleteResultsFetchRequestSuccessType,
   AthleteResultsFetchRequestFailType,
 } from './AthleteActions';
+import { MedalNames, MedalType } from './MedalType';
 
 export {
   Athlete,
@@ -24,4 +25,6 @@ export {
   AthleteResultsFetchRequestSuccessType,
   AthleteResultsFetchRequestFailType,
   AthleteReducerConstants,
+  MedalNames,
+  MedalType,
 };

@@ -14,6 +14,7 @@ type PropsType = {
 
 const Container = styled.View`
   flex-direction: row;
+  margin-right: 32px;
 `;
 
 const AthleteDetailsContainer = styled.View`

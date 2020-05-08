@@ -22,7 +22,7 @@ const AthleteName = styled.Text`
   opacity: 0.8;
   height: 30px;
   background-color: black;
-  color: white;
+  color: ${({ theme }: { theme: ThemeType; }) => theme.colors.white};
 `;
 
 const AthleteImage = styled.Image`
