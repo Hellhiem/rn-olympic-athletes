@@ -29,4 +29,5 @@ const AthleteDetailContainer = ({ route }: PropsType) => {
     <AthleteDetailComponent athleteData={athleteData} athleteResults={athleteResults} />
   );
 };
+
 export default AthleteDetailContainer;
