@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { ThemeType } from 'types/common';
 import styled from 'styled-components/native';
 import { baseUrl } from 'services/constants';
@@ -15,7 +16,7 @@ const AthleteName = styled.Text`
   font-weight: bold;
   text-align: center;
   position: absolute;
-  padding-horizontal: 24px;
+  padding-horizontal: ${Platform.OS === 'ios' ? '24px' : '0px'};
   bottom: 0;
   left: 0;
   right: 0;

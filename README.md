@@ -3,6 +3,8 @@
 **NOTE**:  If you never ran a React Native project, go to
   https://reactnative.dev/docs/environment-setup setup enviroment. 
 
+**NOTE**:  Remember to run `athletes-backend`. 
+
 ### Install packages
   ```bash
     yarn
